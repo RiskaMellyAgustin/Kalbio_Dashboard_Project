@@ -1,0 +1,42 @@
+# Django 
+Django>=4.2,<5.0
+gunicorn
+python-dotenv
+whitenoise
+
+# PostgreSQL
+psycopg2-binary>=2.9.9
+
+# ETL dan data manipulation
+pandas
+numpy
+openpyxl
+python-dateutil
+
+# Visualisasi
+matplotlib
+seaborn
+plotly
+
+# Export & PDF
+reportlab
+xhtml2pdf
+weasyprint
+tablib
+
+# Scheduler & Automation
+schedule
+APScheduler
+
+# REST API
+djangorestframework
+
+# CORS
+django-cors-headers
+
+# Auth tambahan
+django-allauth
+
+# Lain-lain
+crispy-bootstrap5
+python-decouple
