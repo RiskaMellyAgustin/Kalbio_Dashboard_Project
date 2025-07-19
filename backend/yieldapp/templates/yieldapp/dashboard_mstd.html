@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dashboard MSTD</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>📈 Final Yield Trend</h2>
+  <canvas id="yieldTrend"></canvas>
+
+  <h2>📉 Waterfall Loss</h2>
+  <canvas id="waterfallChart"></canvas>
+
+  <h2>📊 Yield per Batch</h2>
+  <canvas id="batchYieldChart"></canvas>
+
+  <script>
+    const yieldTrendData = {{ yield_trend|safe }};
+    const waterfallData = {{ waterfall_data|safe }};
+    const batchYieldData = {{ batch_yield|safe }};
+
+    const ctx1 = document.getElementById('yieldTrend').getContext('2d');
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: yieldTrendData.map(d => d.label),
+        datasets: [{
+          label: 'Final Yield',
+          data: yieldTrendData.map(d => d.value),
+          borderColor: 'green',
+          fill: false
+        }]
+      }
+    });
+
+    const ctx2 = document.getElementById('waterfallChart').getContext('2d');
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: waterfallData.map(d => d.label),
+        datasets: [{
+          label: 'Loss',
+          data: waterfallData.map(d => d.value),
+          backgroundColor: 'red'
+        }]
+      }
+    });
+
+    const ctx3 = document.getElementById('batchYieldChart').getContext('2d');
+    new Chart(ctx3, {
+      type: 'bar',
+      data: {
+        labels: batchYieldData.map(d => d.label),
+        datasets: [{
+          label: 'Yield',
+          data: batchYieldData.map(d => d.value),
+          backgroundColor: 'blue'
+        }]
+      }
+    });
+  </script>
+</body>
+</html>

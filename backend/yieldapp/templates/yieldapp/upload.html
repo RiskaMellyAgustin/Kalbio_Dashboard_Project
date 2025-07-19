@@ -1,0 +1,20 @@
+<!-- yieldapp/templates/upload.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload CSV - Operator</title>
+</head>
+<body>
+    <h2>Upload CSV Data Proses</h2>
+
+    {% if success %}
+        <p style="color:green;">Upload berhasil!</p>
+    {% endif %}
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
