@@ -34,7 +34,7 @@ cd Kalbio_Dashboard_Project
 ```bash
 git checkout nama-branch
 ```
-contoh: `git checkout etl`
+contoh: `git checkout quality_analyst`
 
 ### 3. Update dan Push
 Setelah selesai mengedit atau menambahkan file:
