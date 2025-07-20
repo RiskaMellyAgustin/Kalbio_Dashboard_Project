@@ -29,9 +29,8 @@ cd Kalbio_Dashboard_Project
 
 ### 2. Checkout ke Branch Kalian
 ```bash
-git checkout nama-branch
+git checkout database_administrator
 ```
-Contoh: `git checkout quality_analyst`
 
 ### 3. Pastikan Sudah Masuk ke Branch Kalian
 ```bash
@@ -43,7 +42,7 @@ Setelah selesai mengedit atau menambahkan file:
 ```bash
 git add .
 git commit -m "Tulis deskripsi perubahan singkat"
-git push origin nama-branch
+git push origin database_administrator
 ```
 
 ---
